@@ -1,0 +1,83 @@
+/* ===== Tema oscuro estilo PlayStation ===== */
+
+body {
+    background-color: #0d1117;
+    color: #e6e6e6;
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #61a8ff;
+}
+
+a {
+    color: #61a8ff;
+    text-decoration: none;
+}
+
+nav {
+    background: #161b22;
+    padding: 15px;
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #30363d;
+}
+
+nav a {
+    padding: 8px 15px;
+    background: #238dff;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    background: #4ca2ff;
+}
+
+.container {
+    padding: 40px;
+}
+
+.table {
+    width: 100%;
+    background: #161b22;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr {
+    border-bottom: 1px solid #30363d;
+}
+
+table td, table th {
+    padding: 10px;
+}
+
+table th {
+    background: #1d2631;
+    color: #92baff;
+}
+
+button, .btn {
+    background: #238dff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+button:hover, .btn:hover {
+    background: #4fa1ff;
+}

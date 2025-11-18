@@ -1,0 +1,172 @@
+/* ===== GameStore Digital — estilos base ===== */
+:root{
+  --bg: #0b1020;
+  --panel: #121a34;
+  --panel-2:#0f1730;
+  --text: #e9eefc;
+  --muted:#a9b5d1;
+  --brand:#2b6df3;       /* azul PlayStation vibes */
+  --brand-2:#4aa0ff;
+  --ok:#22c55e;
+  --warn:#f59e0b;
+  --danger:#ef4444;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#060915);color:var(--text)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1100px,92vw);margin:0 auto}
+
+/* Header / nav */
+.header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(6px);
+  background:linear-gradient(180deg, rgba(10,16,34,.95), rgba(10,16,34,.75));
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{display:flex;align-items:center;gap:24px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--brand)}
+.nav-links{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}
+.nav a{padding:8px 12px;border-radius:10px}
+.nav a[aria-current="page"], .nav a:hover{background:rgba(255,255,255,.06)}
+
+/* Hero */
+.hero{padding:60px 0 30px}
+.hero .card{
+  display:grid; grid-template-columns:1.2fr 1fr; gap:24px;
+  background:linear-gradient(160deg,var(--panel),var(--panel-2));
+  padding:28px;border-radius:18px; box-shadow:var(--shadow);
+  border:1px solid rgba(255,255,255,.06)
+}
+.hero h1{font-size:clamp(28px,4vw,40px);margin:0 0 8px}
+.hero p{color:var(--muted);margin:0 0 18px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,#17306b,#10255a);color:#fff;cursor:pointer}
+.btn:hover{filter:brightness(1.05)}
+.btn.secondary{background:transparent}
+.badge{display:inline-block;background:rgba(76,150,255,.15);border:1px solid rgba(76,150,255,.35);color:#a5c8ff;padding:6px 10px;border-radius:999px;font-size:12px;margin-bottom:10px}
+
+/* Sections */
+.section{padding:26px 0}
+.section h2{font-size:22px;margin:0 0 10px}
+.section p.lead{color:var(--muted);margin:0 0 14px}
+
+/* Table list */
+.table{
+  width:100%; border-collapse:separate; border-spacing:0 8px;
+}
+.table thead th{font-weight:600;color:#cdd7f0;text-align:left;padding:10px 12px}
+.table tbody tr{background:linear-gradient(180deg,#0f1633,#0a1230); border:1px solid rgba(255,255,255,.06)}
+.table tbody td{padding:14px 12px; vertical-align:middle}
+.table tbody tr td:first-child{border-top-left-radius:12px;border-bottom-left-radius:12px}
+.table tbody tr td:last-child{border-top-right-radius:12px;border-bottom-right-radius:12px}
+.price{font-weight:700;color:#dbe7ff}
+.tag{display:inline-block;background:rgba(255,255,255,.06);padding:6px 10px;border-radius:999px;font-size:12px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+
+/* Cards grid */
+.grid{
+  display:grid; gap:18px;
+  grid-template-columns: repeat( auto-fill, minmax(220px,1fr) );
+}
+.card{
+  background:linear-gradient(180deg,#0f1730,#0b1228);
+  border:1px solid rgba(255,255,255,.06); border-radius:16px; overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.card .body{padding:14px}
+.card h3{margin:6px 0 4px;font-size:18px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;color:#b8c3de;font-size:13px}
+.card .footer{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-top:1px solid rgba(255,255,255,.06)}
+.card .footer .price{font-size:16px}
+
+/* Product page */
+.product{
+  display:grid; grid-template-columns: .9fr 1.1fr; gap:26px;
+  background:linear-gradient(160deg,var(--panel),var(--panel-2));
+  padding:24px;border-radius:18px;border:1px solid rgba(255,255,255,.06); box-shadow:var(--shadow)
+}
+.kv{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.06)}
+.specs{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 14px}
+.specs .tag{background:rgba(255,255,255,.07)}
+
+/* Form */
+.form{background:linear-gradient(180deg,#0f1630,#0a122c);padding:20px;border-radius:16px;border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow)}
+.field{margin:0 0 14px}
+label{display:block;margin:0 0 6px;color:#cdd7f0}
+input, select, textarea{
+  width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12);
+  background:#0b1430; color:var(--text)
+}
+textarea{min-height:110px;resize:vertical}
+.form .row{display:grid;grid-template-columns:1fr 1fr; gap:14px}
+@media (max-width:720px){ .form .row{grid-template-columns:1fr} .hero .card, .product{grid-template-columns:1fr} }
+
+/* Footer */
+.footer{padding:22px 0;color:#a9b5d1}
+.footer .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.06);padding-top:16px;margin-top:14px}
+
+/* Utilities */
+.mt{margin-top:18px}
+.center{display:flex;align-items:center;justify-content:center;gap:10px}
+.small{font-size:13px;color:var(--muted)}
+/* ====== Responsive ====== */
+
+/* Nav: apilar en móviles */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+  }
+  .hero .card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .product {
+    flex-direction: column;
+  }
+}
+
+/* Tablas con scroll en pantallas angostas */
+.table {
+  display: table;
+  width: 100%;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+@media (max-width: 640px) {
+  .table th, .table td {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Grid: cartas más chicas en móvil */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+.btn.small {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+.btn.danger {
+  background: #d32f2f;
+}
+.btn.danger:hover {
+  background: #b71c1c;
+}
